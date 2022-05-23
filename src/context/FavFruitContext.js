@@ -1,9 +1,11 @@
-import { createContext, useState } from 'react';
+import { createContext, useContext, useState } from 'react';
 
 export const FavFruitContext = createContext();
+export const useFavFruit = () => useContext(FavFruitContext);
 
 export default function FavFruitProvider(props) {
   const [favFruitId, setFavFruitId] = useState('1');
+  console.log(favFruitId);
 
   return (
     <FavFruitContext.Provider
